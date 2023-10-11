@@ -1,0 +1,66 @@
+.Analytics{
+    width: 968px;
+height: 151px;
+margin-top: 2rem;
+flex-shrink: 0;
+align-items: center;
+display: flex;
+fill: #FFF;
+justify-content: space-around;
+border-radius: 15px;
+background-color: rgb(252, 249, 244);
+filter: drop-shadow(0px 10px 60px rgba(226, 236, 249, 0.50));
+}
+
+.Analytics :last-child{
+border: none;
+
+}
+
+.Analytics-item{
+    padding: 10px;
+    display: flex;
+
+    gap: 20px;
+    align-items: center;
+  
+    width: 255px;
+    
+}
+
+.dollarIcon{
+    border-radius: 50%;
+    height: 60px;
+display: flex;
+justify-content: center;
+align-items: center;
+    width: 60px;
+
+
+    
+}
+
+#greenIcon{
+background-color: rgb(193, 244, 193);
+}
+
+#blueIcon{
+background-color: rgb(181, 232, 255);
+}
+
+#redIcon{
+background-color: rgb(255, 128, 194);
+}
+
+.greyLine{
+    width: 1px;
+    height: 80px;
+    background-color: lightgrey;
+    color: #ACACAC;
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.14px;
+}

@@ -1,0 +1,142 @@
+
+.Main{
+    margin-left: 4rem;
+  
+}
+.schoolName{
+    color: #000;
+    margin-top:2rem;
+   
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.greyText{
+
+    color: #ACACAC;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.14px;
+}
+
+.blackText{
+    color: #333;
+font-family: Poppins;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: 100%; /* 32px */
+letter-spacing: -0.32px;
+}
+
+.small-blackText{
+    color: #292D32;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.12px;
+}
+
+.greenText{
+    color: #00AC4F;
+font-family: Poppins;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.12px;
+}
+
+.auth-container{
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 10px 60px rgba(254, 255, 255, 0.5));
+width: 400px;
+
+
+min-height: 350px;
+border-radius: 20px;
+margin: 100px auto;
+padding: 2rem;
+
+}
+
+.auth-container h2{
+    margin-bottom: 30px;
+
+
+}
+
+.inputContainer{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
+
+}
+
+.inputContainer input{
+    background: #ffffff ;
+    transition: all ease-in-out;
+    padding-left: 10px;
+  
+    height: 40px;
+   border: 2px solid rgb(232, 229, 229);
+margin-left: 10px;
+    flex-grow: 1;
+    border-radius: 8px;
+
+}
+
+.login-btn{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-btn:hover{
+background-color:rgba(0,0,0,0.8);
+}
+
+input:focus{
+    outline: none;
+}
+label{
+width: auto;
+text-align: center;
+
+color: #030303;
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; /* 171.429% */
+letter-spacing: -0.28px;
+   
+   
+}
+
+
+
+.App{
+    width: 100%;
+    height: 100%;
+ 
+}
