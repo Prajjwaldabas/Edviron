@@ -9,7 +9,7 @@ const Payments = require('../models/payments.js');
 
 const EdvironAdmins = require('../models/edvironadmins.js')
 
-
+const User = require('../models/user.js')
 
 
 module.exports.section = async (req,res)=>{
@@ -32,7 +32,7 @@ module.exports.students = async (req,res)=>{
 }
 module.exports.admins = async (req,res)=>{
     try {
-        const admins = await EdvironAdmins.find();
+        const admins = await User.find();
         res.json(admins);
       } catch (error) {
         res.status(500).json({ error: 'Failed to fetch sections.' });
