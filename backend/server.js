@@ -15,12 +15,28 @@ const dashboardRoutes = require('./routes/dashboard')
 app.use(bodyParser.json({limit:'30mb',extended:true}));
 app.use(bodyParser.urlencoded({limit:'30mb',extended:true}))
 
-// app.use(bodyParser.json()); // Parse JSON request bodies
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+const allowedOrigins = [
+  'https://edviron-dashboard-client-97dk43crq-prajjwaldabas-projects.vercel.app/',
 
-// Use the cors middleware with options
-// app.use(cors(corsOptions));
+  'http://localhost:3000',
+
+  'https://edviron-dashboard.onrender.com'
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+
+app.use(cors(corsOptions));
 
 
 app.use('/auth',AuthRoute)
