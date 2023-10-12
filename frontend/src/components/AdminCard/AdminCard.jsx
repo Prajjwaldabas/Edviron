@@ -1,6 +1,6 @@
 import React from 'react'
 import './AdminCard.css'
-const AdminCard = () => {
+const AdminCard = ({admins}) => {
   return (
     <div className='admin-container'>
         <p className='admin-heading'>Admins</p>
@@ -21,13 +21,18 @@ const AdminCard = () => {
 
       
 
+{
+  admins.map((admin,index)=>(
+    <div className='flex aic w-100  scroll'>
 
-          <div className='flex aic w-100  scroll'>
-
-          <p className='admin-names'>Prashant Kumar</p>
+          <p className='admin-names'>{admin.name}</p>
           <p className='admin-names'>Super Admin</p>
 
           </div>
+  ))
+}
+
+      
 
           <div className='flex aic w-100 jcsa scroll'>
 

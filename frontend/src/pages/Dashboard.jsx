@@ -19,19 +19,49 @@ const Dashboard = () => {
   const [sections, setSections] = useState([]);
   const [invoices, setInvoices] = useState([]);
   const[defaulters,setDefaulters]=useState([]);
+  const[admins,setAdmins]=useState([]);
 
   const Base_URL = process.env.REACT_APP_API_BASE_URL;
  
 
   useEffect(() => {
 
+
+    fetch(`${Base_URL}/api/defaulters`)
+    .then((response) => response.json())
+    .then((data) => {
+      setDefaulters(data); 
     
+    
+    })
+    .catch((error) => console.error('Error fetching defaulters:', error));
+
+    
+    fetch(`${Base_URL}/api/transactions`)
+    .then((response) => response.json())
+    .then((data) => {
+      setTransactions(data); 
+    
+    })
+    .catch((error) => console.error('Error fetching transactions:', error));
+
     
     fetch(`${Base_URL}/api/students`)
     .then((response) => response.json())
     .then((data) => {
       setStudents(data); 
-      // console.log('Fetched students:', data); 
+    
+    })
+    .catch((error) => console.error('Error fetching students:', error));
+
+
+    fetch(`${Base_URL}/api/admins`)
+    .then((response) => response.json())
+    .then((data) => {
+      setAdmins(data); 
+
+      console.log(admins);
+    
     })
     .catch((error) => console.error('Error fetching students:', error));
   
@@ -54,13 +84,7 @@ const Dashboard = () => {
     .catch((error) => console.error('Error fetching fines:', error));
 
    
-    fetch(`${Base_URL}/api/transactions`)
-    .then((response) => response.json())
-    .then((data) => {
-      setTransactions(data); 
-      // console.log('Fetched transactions:', data); 
-    })
-    .catch((error) => console.error('Error fetching transactions:', error));
+
 
 
     fetch(`${Base_URL}/api/invoices`)
@@ -72,14 +96,7 @@ const Dashboard = () => {
     .catch((error) => console.error('Error fetching invoices:', error));
 
 
-    fetch(`${Base_URL}/api/defaulters`)
-    .then((response) => response.json())
-    .then((data) => {
-      setDefaulters(data); 
     
-      // console.log('Fetched invoices:', data); 
-    })
-    .catch((error) => console.error('Error fetching defaulters:', error));
 
 
 
@@ -166,7 +183,7 @@ const formattedAmountTillDate = formatNumber(totalAmountTillDate);
   
   
   <div className='flex mt-20 jcsb'>
-      <AdminCard/>
+      <AdminCard admins={admins}/>
      <DisbursalsCard transactionsThisMonth={transactionsThisMonth}/>
   </div>
   

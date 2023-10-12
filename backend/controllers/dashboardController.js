@@ -30,6 +30,15 @@ module.exports.students = async (req,res)=>{
       }
 
 }
+module.exports.admins = async (req,res)=>{
+    try {
+        const admins = await EdvironAdmins.find();
+        res.json(admins);
+      } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch sections.' });
+      }
+
+}
 module.exports.fines = async (req,res)=>{
     try {
         const fines = await Fines.find();
