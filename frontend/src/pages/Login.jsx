@@ -46,7 +46,7 @@ const token= data.token
             name: data.user.name,
             email: data.user.email,
             role: data.user.role,
-            // Add more user details here as needed
+        
           },
         };
         

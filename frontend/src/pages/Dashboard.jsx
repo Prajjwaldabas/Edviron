@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SideNav from '../components/SideNav/SideNav';
 import Analytics from '../components/Analytics/Analytics';
-import { collectionInfo } from '../data';
+
 import CollectionDetails from '../components/collectionDetails/collectionDetails'; // Import the component
 import OverviewCard from '../components/OverviewCard/OverviewCard';
 import PaymentCard from '../components/Payment/PaymentCard';
@@ -89,7 +89,7 @@ const Dashboard = () => {
 
 
   const currentDate = new Date();
-const currentMonth = 8 // Months are 0-based, so we add 1.
+const currentMonth = 8 
 const currentYear = currentDate.getFullYear();
 
 // Filter transactions for the current month and year
@@ -112,7 +112,7 @@ const totalAmountThisMonth = transactionsThisMonth.reduce((total, transaction) =
 const totalAmountTillDate = transactions.reduce((total, transaction) => {
   const amount = parseFloat(transaction.amount); // Ensure it's a number
   return isNaN(amount) ? total : total + amount;
-}, 0); // Initialize the total to 0
+}, 0);
 
 const formattedAmountThisMonth = formatNumber(totalAmountThisMonth);
 const formattedAmountTillDate = formatNumber(totalAmountTillDate);
