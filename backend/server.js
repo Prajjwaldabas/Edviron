@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({limit:'30mb',extended:true}))
 
 
 const allowedOrigins = [
-  'https://edviron-dashboard-client-97dk43crq-prajjwaldabas-projects.vercel.app/',
+  'https://edviron-frontend-mocha.vercel.app/',
 
   'http://localhost:3000',
 
