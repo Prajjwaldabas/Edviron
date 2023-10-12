@@ -15,7 +15,7 @@ const AdminCard = ({ admins }) => {
           <div className="flex fd-col scroll-container">
             <div className="flex fd-col scrollable-content">
               {admins.map((admin, index) => (
-                <div className="flex aic w-100  scroll">
+                <div className="flex aic w-100  scroll jcsb">
                   <p className="admin-names">{admin.name}</p>
                   <p className="admin-names">{admin.role}</p>
                 </div>

@@ -61,13 +61,14 @@ letter-spacing: -0.28px;
     display: flex;
 }
 
-.nameContainer{
-padding-bottom: 10px;
-justify-content: flex-start;
-gap: 157px;
-padding-left: 8px;
-   
+
+  .nameContainer {
+    padding: 0px 43px;
+    padding-bottom: 10px;
+    justify-content: space-between;
 }
+   
+
 
 
 .scroll-container{
@@ -110,11 +111,14 @@ padding-left: 8px;
 }
 
 
-.scroll{
-    justify-content: flex-start;
+
+  .scroll {
+    padding: 0 12px;
+   
     gap: 85px;
-  
 }
+  
+
 
 .scrollable-content{
     overflow-y: scroll;
