@@ -10,8 +10,11 @@ import DisbursalsCard from '../components/disbursalsCard/disbursalsCard'; // Use
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { formatNumber } from '../data';
+import Loader from '../components/Loader/Loader';
 
 const Dashboard = () => {
+
+  const [loading, setLoading]=useState(true)
 
   const [students, setStudents] = useState([]);
   const [fines, setFines] = useState([]);
@@ -31,6 +34,7 @@ const Dashboard = () => {
     .then((response) => response.json())
     .then((data) => {
       setDefaulters(data); 
+      setLoading(false)
     
     
     })
@@ -41,6 +45,7 @@ const Dashboard = () => {
     .then((response) => response.json())
     .then((data) => {
       setTransactions(data); 
+
     
     })
     .catch((error) => console.error('Error fetching transactions:', error));
@@ -50,6 +55,7 @@ const Dashboard = () => {
     .then((response) => response.json())
     .then((data) => {
       setStudents(data); 
+     
     
     })
     .catch((error) => console.error('Error fetching students:', error));
@@ -153,44 +159,56 @@ const formattedAmountTillDate = formatNumber(totalAmountTillDate);
 
 
   
-    return (
-      <div className='flex'>
-        <SideNav user={user}/> 
-        <div className='Main'>
-          <p className='schoolName'>
-            DAV Public School, Bhilai
-          </p>
+  
 
-
-          <Analytics formattedAmountTillDate={formattedAmountTillDate}  defaulters={defaulters} students={students}/>
-
-
-          <div className='school-analytics'>
-         
-              <CollectionDetails  students={students} sections={sections} fines ={fines} formattedAmountThisMonth={formattedAmountThisMonth} invoices={invoices}/> 
-         
-          </div>
-  
-  
-  <div className='flex jcsb'>
-  
-  <OverviewCard/>
-  
-  <PaymentCard/>
-  
-  
-  </div>
-  
-  
-  <div className='flex mt-20 jcsb'>
-      <AdminCard admins={admins}/>
-     <DisbursalsCard transactionsThisMonth={transactionsThisMonth}/>
-  </div>
-  
-  
-        </div>
+      return (
+        <div>
+          {loading ? (
+            <Loader />
+          ) : (
+            <div className='flex'>
+            <SideNav user={user}/> 
+            <div className='Main'>
+              <p className='schoolName'>
+                DAV Public School, Bhilai
+              </p>
+    
+    
+              <Analytics formattedAmountTillDate={formattedAmountTillDate}  defaulters={defaulters} students={students}/>
+    
+    
+              <div className='school-analytics'>
+             
+                  <CollectionDetails  students={students} sections={sections} fines ={fines} formattedAmountThisMonth={formattedAmountThisMonth} invoices={invoices}/> 
+             
+              </div>
+      
+      
+      <div className='flex jcsb'>
+      
+      <OverviewCard/>
+      
+      <PaymentCard/>
+      
+      
       </div>
-    );
+      
+      
+      <div className='flex mt-20 jcsb'>
+          <AdminCard admins={admins}/>
+         <DisbursalsCard transactionsThisMonth={transactionsThisMonth}/>
+      </div>
+      
+      
+            </div>
+          </div>
+          )}
+        </div>
+      );
+      
+
+    
+  
   } else {
     
     navigate('/'); 

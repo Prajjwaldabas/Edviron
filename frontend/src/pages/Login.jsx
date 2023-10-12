@@ -80,14 +80,14 @@ const token= data.token
 
 <div className='inputContainer w-100 '>
 
-    <input type="=email" name='email' placeholder='Email' value={email}  onChange={(e) => setEmail(e.target.value)}/>
+    <input type="email" name='email' placeholder='Email' value={email}  onChange={(e) => setEmail(e.target.value)}/>
 
 </div>
 
 <div className='inputContainer w-100 '>
 
 
-<input type="=password" name='password' placeholder='Password'   value={password}  onChange={(e) => setPassword(e.target.value)}/>
+<input type="password" name='password' placeholder='Password'   value={password}  onChange={(e) => setPassword(e.target.value)}/>
     
 </div>
 
